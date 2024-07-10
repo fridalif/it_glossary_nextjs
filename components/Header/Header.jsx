@@ -11,7 +11,7 @@ export class Header extends Component {
                    <Image src={logoSrc} alt='Логотип' width={100} height={140}/>
                 </div>
                 <a href='/'>
-                    <div className={styles.titleBlock} onclick={() => window.location.href = '/'}>
+                    <div className={styles.titleBlock}>
                         <b> IT Глоссарий </b>
                     </div>
                 </a>
