@@ -1,0 +1,134 @@
+.header{
+    width: 101%;
+    top:-1%;
+    height: 20%;
+    background-color: #ffffff;
+    display: flex;
+    font-size: 2rem;
+    position: fixed;
+    left:-1%;
+}
+
+.logoBlock{
+    width: 10%;
+    position: absolute;
+    left:5%;
+    height: 100%;
+}
+
+.titleBlock{
+    width: 15%;
+    position: absolute;
+    left:15%;
+    top:40%;
+    font-family:'Montserrat', sans-serif;
+    font-size: 32px;
+    height: 30%;
+    text-align: center;
+}
+
+.titleBlock:hover{
+    color:#C4E591;
+    border-top:#C4E591 1px solid;
+    border-bottom:#C4E591 1px solid;
+}
+
+.titleBlock:active{
+    color:#8b9d70;
+    border-top:#8b9d70 1px solid;
+    border-bottom:#8b9d70 1px solid;
+}
+
+.documentsHeaderBlock{
+    width: 10%;
+    position: absolute;
+    left:35%;
+    top:45%;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    height: 20%;
+    text-align: center;
+}
+
+.documentsHeaderBlock:hover{
+    color:#C4E591;
+    border-top:#C4E591 1px solid;
+    border-bottom:#C4E591 1px solid;
+}
+
+.documentsHeaderBlock:active{
+    color:#8b9d70;
+    border-top:#8b9d70 1px solid;
+    border-bottom:#8b9d70 1px solid;
+}
+
+.terminsHeaderBlock{
+    width: 10%;
+    position: absolute;
+    left:45%;
+    top:45%;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    height: 20%;
+    text-align: center;
+}
+
+.terminsHeaderBlock:hover{
+    color:#C4E591;
+    border-top:#C4E591 1px solid;
+    border-bottom:#C4E591 1px solid;
+}
+
+.terminsHeaderBlock:active{
+    color:#8b9d70;
+    border-top:#8b9d70 1px solid;
+    border-bottom:#8b9d70 1px solid;
+}
+
+
+.registerHeaderBlock{
+    width: 10%;
+    position: absolute;
+    right:5%;
+    top:45%;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    height: 20%;
+    text-align: center;
+}
+
+.registerHeaderBlock:hover{
+    color:#C4E591;
+    border-top:#C4E591 1px solid;
+    border-bottom:#C4E591 1px solid;
+}
+
+.registerHeaderBlock:active{
+    color:#8b9d70;
+    border-top:#8b9d70 1px solid;
+    border-bottom:#8b9d70 1px solid;
+}
+
+
+.enterHeaderBlock{
+    width: 10%;
+    position: absolute;
+    right:15%;
+    top:45%;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    height: 20%;
+    text-align: center;
+}
+
+.enterHeaderBlock:hover{
+    color:#C4E591;
+    border-top:#C4E591 1px solid;
+    border-bottom:#C4E591 1px solid;
+}
+
+.enterHeaderBlock:active{
+    color:#8b9d70;
+    border-top:#8b9d70 1px solid;
+    border-bottom:#8b9d70 1px solid;
+}
