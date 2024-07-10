@@ -1,0 +1,197 @@
+.formsBody{
+    position: relative;
+    margin-top: 50px;
+    width: 50%;
+    height: 400px;
+    background-color: #C4E591;
+    top: 0;
+    left: 25%;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size:24px;
+    box-shadow: #8b9d70 0 0 10px;
+}
+
+.otherBlock {
+    position:absolute;
+    width:50%;
+    height: 100%;
+    transition: all 500ms;
+    text-align: center;
+}
+
+.loginFormBlock{
+    position: absolute;
+    width:50%;
+    left:50%;
+    height: 100%;
+    top:0;
+    background-color: #ffffffd0;
+    color:black;
+    transition: all 500ms ease;
+}
+
+.loginFormCloseButton{
+    position: absolute;
+}
+
+.loginInput{
+    position: absolute;
+    width: 80%;
+    left:20%;
+    height: 95%;
+    font-size: 24px;
+    background-color: #ffffff;
+    border:none;
+    outline:none;
+    border-radius: 3px; 
+}
+.loginInput:focus{
+    outline: #C4E591;
+    border-right:#C4E591 3px solid;
+    border-left:#C4E591 3px solid;; 
+    border-top:#C4E591 3px solid;
+    border-bottom:#C4E591 3px solid; 
+}
+.loginForm{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size:40px;
+    text-align:center;
+}
+
+.loginInputIcon{
+    width: 20%;
+    position:absolute;
+    height: 100%;
+    background-color: #ffffff;  
+
+    border-radius: 3px; 
+}
+
+.usernameInputBlock{
+    position: absolute;
+    width: 80%;
+    left:10%;
+    height: 10%;
+    top:15%;
+}
+
+.passwordInputBlock{
+    position: absolute;
+    width: 80%;
+    left:10%;
+    height: 10%;
+    top:26%;
+}
+
+.submitButtonLogin{
+    color: white;
+    position: relative;
+    width:80%;
+    left:10%;
+    height: 10%;
+    margin-top:39%;
+    font-size: 24px;
+    background-color: #C4E591;
+    border: 3px solid #C4E591;
+}
+
+.submitButtonLogin:hover{
+    transition: all 500ms ease;
+    background-color: #8b9d70;
+    border: 3px solid #8b9d70;
+}
+.submitButtonLogin:active{
+    transition: all 500ms ease;
+    opacity: 0.5;
+}
+.changeButtonLogin{
+    color: #C4E591;
+    position: relative;
+    width:80%;
+    left:10%;
+    height: 10%;
+    margin-top:0%;
+    font-size: 24px;
+    background-color: white;
+    border: 3px solid #C4E591;
+}
+
+.changeButtonLogin:hover{
+    transition: all 500ms ease;
+    color: #8b9d70;
+    border: 3px solid #8b9d70;
+}
+.changeButtonLogin:active{
+    transition: all 500ms ease;
+    opacity: 0.5;
+}
+
+.registerForm{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size:40px;
+    text-align:center;
+}
+
+.retypePasswordInputBlock{
+    position: absolute;
+    width: 80%;
+    left:10%;
+    height: 10%;
+    top:37%;
+}
+.emailInputBlock{
+    position: absolute;
+    width: 80%;
+    left:10%;
+    height: 10%;
+    top:48%;
+}
+
+.submitButtonRegister{
+    color: white;
+    position: relative;
+    width:80%;
+    left:10%;
+    height: 10%;
+    margin-top:62%;
+    font-size: 24px;
+    background-color: #C4E591;
+    border: 3px solid #C4E591;
+}
+
+.submitButtonRegister:hover{
+    transition: all 500ms ease;
+    background-color: #8b9d70;
+    border: 3px solid #8b9d70;
+}
+.submitButtonRegister:active{
+    transition: all 500ms ease;
+    opacity: 0.5;
+}
+.changeButtonRegister{
+    color: #C4E591;
+    position: relative;
+    width:80%;
+    left:10%;
+    height: 10%;
+    margin-top:0%;
+    font-size: 24px;
+    background-color: white;
+    border: 3px solid #C4E591;
+}
+
+.changeButtonRegister:hover{
+    transition: all 500ms ease;
+    color: #8b9d70;
+    border: 3px solid #8b9d70;
+}
+.changeButtonRegister:active{
+    transition: all 500ms ease;
+    opacity: 0.5;
+}

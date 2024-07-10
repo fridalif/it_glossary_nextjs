@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import styles from './Body.module.css';
 import { ContentBubble } from '../ContentBubble/ContentBubble';
-//import RegisterForm from './RegisterForm';
+import { RegisterForm } from '../RegisterForm/RegisterForm';
 
 export class Body extends Component {
     constructor(props){
@@ -20,8 +20,7 @@ export class Body extends Component {
                     {this.state.mode === 'Terms'&& <>Все термины</>}
                 </div>
                 {this.state.mode === 'Register' || this.state.mode === 'Login' ?
-                  <>register</>
-                  //<RegisterForm mode={this.state.mode} />
+                  <RegisterForm mode={this.state.mode} />
                   :
                   <ContentBubble mode={this.state.mode} />
                 }
