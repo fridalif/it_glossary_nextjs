@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import styles from './Body.module.css';
-//import ContentBubble from './ContentBubble'
+import { ContentBubble } from '../ContentBubble/ContentBubble';
 //import RegisterForm from './RegisterForm';
 
 export class Body extends Component {
@@ -23,8 +23,7 @@ export class Body extends Component {
                   <>register</>
                   //<RegisterForm mode={this.state.mode} />
                   :
-                  <>content</>
-                  //<ContentBubble mode={this.state.mode} />
+                  <ContentBubble mode={this.state.mode} />
                 }
                 
             </div>
