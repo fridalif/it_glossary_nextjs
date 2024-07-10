@@ -1,0 +1,16 @@
+.body{
+    top: 29%;
+    width:101%;
+    left:-1%;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.bodyContentTitle{
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    height: 10%;
+    text-align: center;
+    left:15%;
+    position: absolute;
+}
