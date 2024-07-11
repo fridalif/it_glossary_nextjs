@@ -1,5 +1,5 @@
 import rest_framework.serializers as serializers
-from api.models import Document, Terms
+from api.models import Document, Term
 
 class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,5 +9,5 @@ class DocumentSerializer(serializers.ModelSerializer):
 class TermsSerializer(serializers.ModelSerializer):
     document_name = serializers.CharField(source='document.name')
     class Meta:
-        model = Terms
+        model = Term
         fields = '__all__'
