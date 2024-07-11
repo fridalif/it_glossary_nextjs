@@ -6,7 +6,7 @@ class DocumentSerializer(serializers.ModelSerializer):
         model = Document
         fields = ['name']
         
-class TermsSerializer(ModelSerializer):
+class TermsSerializer(serializers.ModelSerializer):
     document_name = serializers.CharField(source='document.name')
     class Meta:
         model = Terms
