@@ -54,3 +54,56 @@
 .lawBubbleDownloadButton:active{
     background-color: black;
 }
+
+
+.termsBubbleName{
+    position:absolute;
+    height: 100%;
+    font-size: 16px;
+    left:5%;
+    width:25%;
+    background-color:#C4E591;
+    font-family: 'Monserrat',sans-serif;
+}
+
+.termsBubbleDefinition{
+    position:absolute;
+    height: 100%;
+    font-size: 16px;
+    left:30%;
+    width:40%;
+    background-color:#C4E591;
+    font-family: 'Monserrat',sans-serif;
+}
+
+.termsBubbleDocument{
+    position:absolute;
+    height: 100%;
+    font-size: 16px;
+    left:70%;
+    width:15%;
+    background-color:#C4E591;
+    font-family: 'Monserrat',sans-serif;
+}
+
+.termsBubbleDownloadButton{
+    position:absolute;
+    height: 79%;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 15px;
+    left:85%;
+    width:10%;
+    background-color:#C4E591;
+    font-family: 'Monserrat',sans-serif;
+}
+
+.termsBubbleDownloadButton:hover{
+    background-color: #8b9d70;
+}
+.termsBubbleDownloadButton:active{
+    background-color: black;
+}
+.termsBubbleDownloadButton:active{
+    background-color: black;
+}

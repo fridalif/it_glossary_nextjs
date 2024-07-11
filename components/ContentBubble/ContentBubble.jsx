@@ -25,7 +25,18 @@ export class ContentBubble extends Component {
                         <MdDownload/>
                     </div>
                 </>
-                :null
+                :
+                <>
+                    <div className={styles.termsBubbleName}>
+                    </div>
+                    <div className={styles.termsBubbleDefinition}>
+                    </div>
+                    <div className={styles.termsBubbleDocument}>
+                    </div>
+                    <div className={styles.termsBubbleDownloadButton}>
+                        <MdDownload/>
+                    </div>
+                </>
                 }
             </div>
         )
