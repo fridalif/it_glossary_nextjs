@@ -20,15 +20,18 @@ export class Body extends Component {
                     {
                         this.state.mode === 'Documents' || this.state.mode==='Terms' &&
                         <>
-                            <input type='text' name='search' id='search' className={styles.searchField} />
+                            <input type='text' name='search' id='search' className={styles.searchField} placeholder='Поиск...'/>
                             <div className={styles.searchIcon}><IoMdSearch /></div>
                         </>
                     }
                 </div>
-                {this.state.mode === 'Register' || this.state.mode === 'Login' ?
-                  <RegisterForm mode={this.state.mode} />
-                  :
-                  <ContentBubble mode={this.state.mode} />
+                {
+                    this.state.mode === 'Register' || this.state.mode === 'Login' &&
+                    <RegisterForm mode={this.state.mode} />
+                }
+                {
+                    this.state === 'Documents' &&
+                    <ContentBubble mode={this.state.mode} />
                 }
                 
             </div>

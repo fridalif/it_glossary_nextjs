@@ -4,7 +4,7 @@
     left:20%;
     border-radius: 50px;
     background-color: #C4E591;
-    height: 100px;
+    height: 70px;
     margin-top: 40px;
     color:#ffffff;
     padding-left:5%;
@@ -12,7 +12,7 @@
 
 .lawBubbleName{
     position:absolute;
-    padding-top:30px;
+    padding-top:11px;
     height: 40%;
     font-size: 24px;
     left:5%;
@@ -26,7 +26,7 @@
     position:absolute;
     height: 40%;
     text-align: center;
-    padding-top:30px;
+    padding-top:11px;
     font-size: 24px;
     left:82.5%;
     width:12.5%;
@@ -36,7 +36,7 @@
 }
 
 .lawBubbleDownloadButton{
-    padding-top:30px;
+    padding-top:11px;
     position:absolute;
     height: 40%;
     font-size: 24px;
