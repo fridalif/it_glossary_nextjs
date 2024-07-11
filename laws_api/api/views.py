@@ -1,6 +1,10 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from api.serializers import DocumentSerializer, TermsSerializer 
+from api.models import Document, Terms
 
-
-# Create your views here.
+class TermsAPIView(APIView):
+    def get(self, request, format=None):
+        terms = Terms.objects.all()
+        serializer = TermsSerializer(terms, many=True)
+        return Response(serializer.data)
