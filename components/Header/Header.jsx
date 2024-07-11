@@ -15,12 +15,16 @@ export class Header extends Component {
                         <b> IT Глоссарий </b>
                     </div>
                 </a>
-                <div className={styles.documentsHeaderBlock}>
-                    Документы
-                </div>
-                <div className={styles.terminsHeaderBlock}>
-                    Термины
-                </div>
+                <a href='/documents'>
+                    <div className={styles.documentsHeaderBlock}>
+                        Документы
+                    </div>
+                </a>
+                <a href ='/terms'>
+                    <div className={styles.terminsHeaderBlock}>
+                        Термины
+                    </div>
+                </a>
                 <a href='/login'>
                     <div className={styles.registerHeaderBlock}>
                         Вход/Регистрация
