@@ -18,7 +18,7 @@ export class Body extends Component {
                 <div className={styles.bodyContentTitle} id='bodyContentTitle'>
                     {this.state.mode === 'Home' && <>Самые популярные документы</>}
                     {
-                        this.state.mode === 'Documents' || this.state.mode==='Terms' &&
+                        (this.state.mode === 'Documents' || this.state.mode==='Terms') &&
                         <>
                             <input type='text' name='search' id='search' className={styles.searchField} placeholder='Поиск...'/>
                             <div className={styles.searchIcon}><IoMdSearch /></div>
@@ -30,7 +30,7 @@ export class Body extends Component {
                     <RegisterForm mode={this.state.mode} />
                 }
                 {
-                    this.state === 'Documents' &&
+                    (this.state.mode === 'Documents' || this.state.mode === 'Terms' || this.state.mode ==='Home') &&
                     <ContentBubble mode={this.state.mode} />
                 }
                 
