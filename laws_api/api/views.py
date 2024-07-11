@@ -4,10 +4,24 @@ from api.serializers import DocumentSerializer, TermsSerializer
 from api.models import Document, Term
 
 class TermsAPIView(APIView):
-    def get(self, request, query=None):
+    def get(self, request, id=None):
+        query = request.GET.get('query')
         terms = Term.objects.all()
+        if id is not None:
+            terms = terms.filter(id=id)
         if query is not None:
             terms = terms.filter(term__contains=query)
         serializer = TermsSerializer(terms, many=True)
         return Response(serializer.data)
-        
+
+class DocumentsAPIView(APIView):
+    def get(self, request, id=None):
+        query = request.GET.get('query')     
+        documents = Document.objects.all()
+        if id is not None:
+            documents = documents.filter(id=id)
+        if query is not None:
+            documents = documents.filter(name__contains=query)
+            
+        serializer = DocumentSerializer(documents, many=True)
+        return Response(serializer.data)
