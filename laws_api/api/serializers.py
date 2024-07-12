@@ -4,7 +4,7 @@ from api.models import Document, Term
 class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Document
-        fields = ['name']
+        fields = ['name','downloads']
         
 class TermsSerializer(serializers.ModelSerializer):
     document_name = serializers.CharField(source='document.name')

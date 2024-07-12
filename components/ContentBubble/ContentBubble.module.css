@@ -57,8 +57,9 @@
 
 
 .termsBubbleName{
+    padding-top: 15px;
     position:absolute;
-    height: 100%;
+    height: 70%;
     font-size: 16px;
     left:5%;
     width:25%;
@@ -67,8 +68,9 @@
 }
 
 .termsBubbleDefinition{
+    padding-top: 15px;
     position:absolute;
-    height: 100%;
+    height: 70%;
     font-size: 16px;
     left:30%;
     width:40%;

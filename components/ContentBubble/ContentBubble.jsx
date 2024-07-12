@@ -7,7 +7,8 @@ export class ContentBubble extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            mode: this.props.mode
+            mode: this.props.mode,
+            element: this.props.element
         }
     }
     render() {
@@ -16,10 +17,10 @@ export class ContentBubble extends Component {
                 {(this.state.mode === 'Documents' || this.state.mode === 'Home')?
                 <>
                     <div className={styles.lawBubbleName}>
-                        Федеральный закон от 26 июля 2017 г. N 187-ФЗ
+                        {this.state.element.name}
                     </div>
                     <div className={styles.lawBubbleDownloadsCount}>
-                    <FaEye /> 0 
+                    <FaEye /> {this.state.element.downloads}
                     </div>
                     <div className={styles.lawBubbleDownloadButton}>
                         <MdDownload/>
@@ -28,10 +29,13 @@ export class ContentBubble extends Component {
                 :
                 <>
                     <div className={styles.termsBubbleName}>
+                        {this.state.element.term}
                     </div>
                     <div className={styles.termsBubbleDefinition}>
+                        {this.state.element.definition}
                     </div>
                     <div className={styles.termsBubbleDocument}>
+                        {this.state.element.document_name}
                     </div>
                     <div className={styles.termsBubbleDownloadButton}>
                         <MdDownload/>
