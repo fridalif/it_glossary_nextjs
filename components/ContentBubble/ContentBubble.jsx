@@ -1,4 +1,3 @@
-import { Component } from 'react'
 import styles from './ContentBubble.module.css'
 import { MdDownload } from 'react-icons/md'
 import { FaEye } from "react-icons/fa";

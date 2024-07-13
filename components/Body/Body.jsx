@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Body.module.css';
-import { ContentBubble } from '../ContentBubble/ContentBubble';
+import { TermBubble, DocumentBubble } from '../ContentBubble/ContentBubble';
 import { RegisterForm } from '../RegisterForm/RegisterForm';
 import { IoMdSearch } from "react-icons/io";
 import axios from 'axios'
@@ -43,7 +43,12 @@ export function Body({mode}) {
             {
                 mode === 'Register' || mode === 'Login' && <RegisterForm mode={mode} />
             }
-                    
+            {
+                mode === 'Home' || mode === 'Documents' && api_data.map((item) => <DocumentBubble key={item.id} documentName={item.name} documentId={item.id} downloadsCount={item.downloads} />)
+            }
+            {
+                mode === 'Terms' && api_data.map((item) => <TermBubble key={item.id} term={item.term} definition={item.definition} documentName={item.document_name} documentId={item.document.id} termId={item.id} />)
+            }       
         </div>
     );
 }
