@@ -2,13 +2,16 @@ import styles from './ContentBubble.module.css'
 import { MdDownload } from 'react-icons/md'
 import { FaEye } from "react-icons/fa";
 import axios from 'axios'
+import { saveAs } from 'file-saver'
 
 export function DocumentBubble({documentId, documentName, downloadsCount}){
     const downloadDocument = ()=>{
         axios
             .get(`http://127.0.0.1:8000/api/download/${documentId}/`)
             .then(response => {
-                console.log(response);
+                let extension = response.headers['content-type'].split('/').slice(-1)[0];
+                let blob = new Blob([response.data], { type: `application/${extension}` });
+                saveAs(blob, `${documentName}.${extension}`);
                 alert('Файл успешно загружен');
             })
             .catch(error => {
