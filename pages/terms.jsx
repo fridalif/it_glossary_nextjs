@@ -1,13 +1,14 @@
 import { Header } from "../components/Header/Header";
 import { Body } from "../components/Body/Body";
 import axios from "axios";
+import { useState, useEffect } from 'react'
 
 export default function Terms(){
     const [authUsername, setAuthUsername] = useState('')
     const [isStuff, setIsStuff] = useState(false)
 
-    const isAuth = () =>{
-        let accessToken = localStorage.getItem('access')
+    useEffect(() =>{
+        let accessToken = localStorage.getItem('access') || null
         if (accessToken){
             axios
                 .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
@@ -31,10 +32,8 @@ export default function Terms(){
                         })
                 })
         }
-    }
+    }, []);
 
-    isAuth();
-    
     return (
         <>
             <Header authUsername={authUsername} isStuff={isStuff}/>
