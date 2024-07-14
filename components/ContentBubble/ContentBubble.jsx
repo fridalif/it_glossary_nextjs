@@ -9,6 +9,7 @@ export function DocumentBubble({documentId, documentName, downloadsCount}){
             .get(`http://127.0.0.1:8000/api/download/${documentId}/`)
             .then(response => {
                 console.log(response);
+                alert('Файл успешно загружен');
             })
             .catch(error => {
                 alert('Что-то пошло не так');
@@ -22,7 +23,7 @@ export function DocumentBubble({documentId, documentName, downloadsCount}){
             <div className={styles.lawBubbleDownloadsCount}>
                 <FaEye /> {downloadsCount}
             </div>
-            <div className={styles.lawBubbleDownloadButton} id={documentId} onclick={downloadDocument()}>
+            <div className={styles.lawBubbleDownloadButton} id={documentId} onClick={()=>downloadDocument()}>
                 <MdDownload/>
             </div>
         </div>
