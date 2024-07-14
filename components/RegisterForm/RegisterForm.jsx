@@ -3,6 +3,7 @@ import styles from './RegisterForm.module.css'
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
+import axios from 'axios'
 
 export class RegisterForm extends Component {
     constructor(props) {
@@ -15,7 +16,27 @@ export class RegisterForm extends Component {
             mode:this.props.mode
         }
     }
+    enter(){
+        if(this.state.mode === 'Register'){
+            alert('Для регистрации необходимо перейти в соответсвующее окно');
+            return;
+        }
+        let data = {
+            username:this.state.username,
+            password:this.state.password
+        }
+        axios
+            .post('http://127.0.0.1:8000/api/token/', data)
+            .then(response => {
+                localStorage.setItem('access', response.data.access);
+                localStorage.setItem('refresh', response.data.refresh);
+                window.location = 'http://127.0.0.1:3000/';
+            })
+            .catch(error => {
+                alert('Неверное имя пользователя или пароль')
+            })
 
+    }
     changeMode(){
         if(this.state.mode === 'Register'){
             document.getElementById('password').value = ''
@@ -97,7 +118,7 @@ export class RegisterForm extends Component {
                                 </div>
                                 <input type='password' className={styles.loginInput} placeholder='Пароль' name='password' id='password' onChange={(e) => this.setState({password: e.target.value})}/>
                             </div>
-                            <div className={styles.submitButtonLogin} onClick={()=>alert('Eter')}>
+                            <div className={styles.submitButtonLogin} onClick={()=>this.enter()}>
                                 Войти
                             </div>
                             <div className={styles.changeButtonLogin} onClick={() => this.changeMode()}>
