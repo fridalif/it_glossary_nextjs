@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver'
 export function DocumentBubble({documentId, documentName, downloadsCount}){
     const downloadDocument = ()=>{
         axios
-            .get(`http://127.0.0.1:8000/api/download/${documentId}/`)
+            .get(`http://127.0.0.1:8000/api/download/${documentId}/`, { responseType: 'blob' })
             .then(response => {
                 let extension = response.headers['content-type'].split('/').slice(-1)[0];
                 let blob = new Blob([response.data], { type: `application/${extension}` });
