@@ -1,8 +1,19 @@
 import styles from './ContentBubble.module.css'
 import { MdDownload } from 'react-icons/md'
 import { FaEye } from "react-icons/fa";
+import axios from 'axios'
 
 export function DocumentBubble({documentId, documentName, downloadsCount}){
+    const downloadDocument = ()=>{
+        axios
+            .get(`http://127.0.0.1:8000/api/download/${documentId}/`)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                alert('Что-то пошло не так');
+            });
+    }
     return(
         <div className={styles.contentBubble} id={documentId}>
             <div className={styles.lawBubbleName}>
@@ -11,7 +22,7 @@ export function DocumentBubble({documentId, documentName, downloadsCount}){
             <div className={styles.lawBubbleDownloadsCount}>
                 <FaEye /> {downloadsCount}
             </div>
-            <div className={styles.lawBubbleDownloadButton} id={documentId}>
+            <div className={styles.lawBubbleDownloadButton} id={documentId} onclick={downloadDocument()}>
                 <MdDownload/>
             </div>
         </div>
