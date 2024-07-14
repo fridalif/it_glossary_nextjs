@@ -47,7 +47,7 @@ export function Body({mode}) {
                 (mode === 'Home' || mode === 'Documents') && api_data.map((item) => <DocumentBubble key={item.id} documentName={item.name} documentId={item.id} downloadsCount={item.downloads} />)
             }
             {
-                mode === 'Terms' && api_data.map((item) => <TermBubble key={item.id} term={item.term} definition={item.definition} documentName={item.document_name} documentId={item.document.id} termId={item.id} />)
+                mode === 'Terms' && api_data.map((item) => <TermBubble key={item.id} term={item.term} definition={item.definition} documentName={item.document_name} documentId={item.document} termId={item.id} />)
             }       
         </div>
     );

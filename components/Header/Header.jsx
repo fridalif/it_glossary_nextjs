@@ -4,6 +4,9 @@ import { Component } from 'react';
 import logoSrc from './logo.jpg'
 
 export class Header extends Component {
+    constructor(props){
+        super(props)
+    }
     render(){
          return (
             <header className={styles.header}>
@@ -27,7 +30,12 @@ export class Header extends Component {
                 </a>
                 <a href='/login'>
                     <div className={styles.registerHeaderBlock}>
-                        Вход/Регистрация
+                        {this.props.authUsername === ''
+                        ?
+                            <>Вход/Регистрация</>
+                        :
+                            <div onClick={localStorage.removeItem('access') || localStorage.removeItem('refresh')}>{this.props.authUsername} Выход</div>
+                        }
                     </div>
                 </a>
             </header>

@@ -32,6 +32,8 @@ class DocumentsAPIView(APIView):
 def download(request, document_id):
     try:
         document = Document.objects.get(id=document_id)
+        document.downloads += 1
+        document.save()
     except Document.DoesNotExist:
         raise Http404
     
@@ -54,3 +56,11 @@ class RegsiterAPIView(APIView):
         user = User.objects.create_user(username, email, password)
         user.save()
         return Response({'message': 'Пользователь успешно создан'}, status=200)
+    
+class UsernameRoleAPIView(APIView):
+    def get(self, request):
+        if not request.user.is_authenticated:
+            return Response({'username': '', 'is_staff': request.user.is_staff})
+        is_stuff = True if request.user.is_superuser else request.user.is_staff
+        return Response({'username': request.user.username, 'is_staff': request.user.is_staff})
+    
