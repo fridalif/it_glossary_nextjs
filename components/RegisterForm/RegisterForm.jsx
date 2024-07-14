@@ -43,9 +43,18 @@ export class RegisterForm extends Component {
             alert('Для входа необходимо перейти в соответсвующее окно');
             return;
         }
-        if (this.state.password!=this.state.retypePassword){
+        if(this.state.password!=this.state.retypePassword){
             alert('Пароли не совпадают');
             return;
+        }
+        if(this.state.password==='' || this.state.username==''){
+            alert('Пароль и имя пользователя не могут быть пустыми');
+            return;
+        }
+        let data = {
+            username:this.state.username,
+            password:this.state.password,
+            email:this.state.email
         }
     }
 
