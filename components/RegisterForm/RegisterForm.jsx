@@ -3,6 +3,7 @@ import styles from './RegisterForm.module.css'
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
+import axios from 'axios'
 
 export class RegisterForm extends Component {
     constructor(props) {
@@ -14,6 +15,56 @@ export class RegisterForm extends Component {
             email:'',
             mode:this.props.mode
         }
+    }
+    enter(){
+        if(this.state.mode === 'Register'){
+            alert('Для регистрации необходимо перейти в соответсвующее окно');
+            return;
+        }
+        let data = {
+            username:this.state.username,
+            password:this.state.password
+        }
+        axios
+            .post('http://127.0.0.1:8000/api/token/', data)
+            .then(response => {
+                localStorage.setItem('access', response.data.access);
+                localStorage.setItem('refresh', response.data.refresh);
+                window.location = 'http://127.0.0.1:3000/';
+            })
+            .catch(error => {
+                alert('Неверное имя пользователя или пароль')
+            })
+
+    }
+
+    register(){
+        if(this.state.mode === 'Login'){
+            alert('Для входа необходимо перейти в соответсвующее окно');
+            return;
+        }
+        if(this.state.password!=this.state.retypePassword){
+            alert('Пароли не совпадают');
+            return;
+        }
+        if(this.state.password==='' || this.state.username==''){
+            alert('Пароль и имя пользователя не могут быть пустыми');
+            return;
+        }
+        let data = {
+            username:this.state.username,
+            password:this.state.password,
+            email:this.state.email
+        };
+        axios
+            .post('http://127.0.0.1:8000/api/register/', data)
+            .then(response => {
+                alert('Регистрация прошла успешно');
+                this.changeMode();
+            })
+            .catch(error => {
+                alert(error.response.data.error);
+            });
     }
 
     changeMode(){
@@ -76,7 +127,7 @@ export class RegisterForm extends Component {
                                 </div>
                                 <input type='email' className={styles.loginInput} placeholder='Электронная почта' name='email' id='email' onChange={(e) => this.setState({email: e.target.value})}/>
                             </div>
-                            <div className={styles.submitButtonRegister} onClick={()=>alert('Register')}>
+                            <div className={styles.submitButtonRegister} onClick={()=>this.register()}>
                                 Зарегистрироваться
                             </div>
                             <div className={styles.changeButtonRegister} onClick={() => this.changeMode()}>
@@ -97,7 +148,7 @@ export class RegisterForm extends Component {
                                 </div>
                                 <input type='password' className={styles.loginInput} placeholder='Пароль' name='password' id='password' onChange={(e) => this.setState({password: e.target.value})}/>
                             </div>
-                            <div className={styles.submitButtonLogin} onClick={()=>alert('Eter')}>
+                            <div className={styles.submitButtonLogin} onClick={()=>this.enter()}>
                                 Войти
                             </div>
                             <div className={styles.changeButtonLogin} onClick={() => this.changeMode()}>
