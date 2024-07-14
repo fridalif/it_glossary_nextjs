@@ -37,6 +37,18 @@ export class RegisterForm extends Component {
             })
 
     }
+
+    register(){
+        if(this.state.mode === 'Login'){
+            alert('Для входа необходимо перейти в соответсвующее окно');
+            return;
+        }
+        if (this.state.password!=this.state.retypePassword){
+            alert('Пароли не совпадают');
+            return;
+        }
+    }
+
     changeMode(){
         if(this.state.mode === 'Register'){
             document.getElementById('password').value = ''
