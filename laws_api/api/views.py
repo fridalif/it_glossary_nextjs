@@ -32,6 +32,8 @@ class DocumentsAPIView(APIView):
 def download(request, document_id):
     try:
         document = Document.objects.get(id=document_id)
+        document.downloads += 1
+        document.save()
     except Document.DoesNotExist:
         raise Http404
     
