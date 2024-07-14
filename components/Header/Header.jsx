@@ -30,11 +30,11 @@ export class Header extends Component {
                 </a>
                 <a href='/login'>
                     <div className={styles.registerHeaderBlock}>
-                        {this.props.username === ''
+                        {this.props.authUsername === ''
                         ?
                             <>Вход/Регистрация</>
                         :
-                            <>{this.props.username} Выход</>
+                            <div onClick={localStorage.removeItem('access') || localStorage.removeItem('refresh')}>{this.props.authUsername} Выход</div>
                         }
                     </div>
                 </a>

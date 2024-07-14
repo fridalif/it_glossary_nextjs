@@ -1,22 +1,22 @@
 import { Header } from "../components/Header/Header";
 import { Body } from "../components/Body/Body";
 import { useState, useEffect } from 'react'
-
+import axios from "axios"
 export default function Home(){
     const [authUsername, setAuthUsername] = useState('')
-    const [isStuff, setIsStuff] = useState(false)
+    const [isStaff, setIsStaff] = useState(false)
 
     useEffect(() =>{
         let accessToken = localStorage.getItem('access') || null
-        if (accessToken){
+        let refreshToken = localStorage.getItem('refresh')||null
+        if (accessToken||refreshToken){
             axios
                 .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
                 .then((response) => {
-                    setAuthUsername(response.data.username)
-                    setIsStuff(response.data.is_stuff)
+                    setAuthUsername(response.data.username);
+                    setIsStaff(response.data.is_staff);
                 })
                 .catch((error) => {
-                    let refreshToken = localStorage.getItem('refresh')
                     axios
                         .post('http://127.0.0.1:8000/api/token/refresh/', {refresh: refreshToken})
                         .then((response) => {
@@ -26,17 +26,19 @@ export default function Home(){
                                 .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
                                 .then((response) => {
                                     setAuthUsername(response.data.username)
-                                    setIsStuff(response.data.is_stuff)
+                                    setIsStaff(response.data.is_Staff)
                                 })
+                                
                         })
                 })
         }
+        
     }, []);
 
 
     return (
         <>
-            <Header authUsername={authUsername} isStuff={isStuff}/>
+            <Header authUsername={authUsername} isStaff={isStaff}/>
             <Body mode='Home' />
         </>
     )

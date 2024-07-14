@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 export default function Terms(){
     const [authUsername, setAuthUsername] = useState('')
-    const [isStuff, setIsStuff] = useState(false)
+    const [isStaff, setIsStaff] = useState(false)
 
     useEffect(() =>{
         let accessToken = localStorage.getItem('access') || null
@@ -14,7 +14,7 @@ export default function Terms(){
                 .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
                 .then((response) => {
                     setAuthUsername(response.data.username)
-                    setIsStuff(response.data.is_stuff)
+                    setIsStaff(response.data.is_Staff)
                 })
                 .catch((error) => {
                     let refreshToken = localStorage.getItem('refresh')
@@ -27,7 +27,7 @@ export default function Terms(){
                                 .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
                                 .then((response) => {
                                     setAuthUsername(response.data.username)
-                                    setIsStuff(response.data.is_stuff)
+                                    setIsStaff(response.data.is_Staff)
                                 })
                         })
                 })
@@ -36,7 +36,7 @@ export default function Terms(){
 
     return (
         <>
-            <Header authUsername={authUsername} isStuff={isStuff}/>
+            <Header authUsername={authUsername} isStaff={isStaff}/>
             <Body mode='Terms' />
         </>
     )

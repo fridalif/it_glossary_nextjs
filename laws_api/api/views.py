@@ -60,6 +60,7 @@ class RegsiterAPIView(APIView):
 class UsernameRoleAPIView(APIView):
     def get(self, request):
         if not request.user.is_authenticated:
-            Response({'username': '', 'is_stuff': request.user.is_stuff})
-        return Response({'username': request.user.username, 'is_stuff': request.user.is_stuff})
+            return Response({'username': '', 'is_staff': request.user.is_staff})
+        is_stuff = True if request.user.is_superuser else request.user.is_staff
+        return Response({'username': request.user.username, 'is_staff': request.user.is_staff})
     
