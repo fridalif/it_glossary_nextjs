@@ -11,9 +11,3 @@ class Term(models.Model):
     term = models.CharField(max_length=255, verbose_name='Термин')
     definition = models.CharField(max_length=255, verbose_name='Определение')
     document = models.ForeignKey(Document, on_delete=models.CASCADE)
-    
-    
-class UserTokens(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    auth_token = models.CharField(max_length=255)
-    refresh_token = models.CharField(max_length=255)
