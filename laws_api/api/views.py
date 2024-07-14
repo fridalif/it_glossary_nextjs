@@ -56,3 +56,10 @@ class RegsiterAPIView(APIView):
         user = User.objects.create_user(username, email, password)
         user.save()
         return Response({'message': 'Пользователь успешно создан'}, status=200)
+    
+class UsernameRoleAPIView(APIView):
+    def get(self, request):
+        if not request.user.is_authenticated:
+            Response({'username': '', 'is_stuff': request.user.is_stuff})
+        return Response({'username': request.user.username, 'is_stuff': request.user.is_stuff})
+    
