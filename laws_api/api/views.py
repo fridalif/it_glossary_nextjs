@@ -41,7 +41,4 @@ def download(request, document_id):
     
     
 class RegsiterAPIView(APIView):
-    pass
-
-class LoginAPIView(APIView):
-    pass
+    ...    
