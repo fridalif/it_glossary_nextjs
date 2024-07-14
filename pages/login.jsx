@@ -9,15 +9,15 @@ export default function Login(){
 
     useEffect(() =>{
         let accessToken = localStorage.getItem('access') || null
-        if (accessToken){
+        let refreshToken = localStorage.getItem('refresh')||null
+        if (accessToken||refreshToken){
             axios
                 .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
                 .then((response) => {
-                    setAuthUsername(response.data.username)
-                    setIsStaff(response.data.is_Staff)
+                    setAuthUsername(response.data.username);
+                    setIsStaff(response.data.is_staff);
                 })
                 .catch((error) => {
-                    let refreshToken = localStorage.getItem('refresh')
                     axios
                         .post('http://127.0.0.1:8000/api/token/refresh/', {refresh: refreshToken})
                         .then((response) => {
@@ -29,9 +29,11 @@ export default function Login(){
                                     setAuthUsername(response.data.username)
                                     setIsStaff(response.data.is_Staff)
                                 })
+                                
                         })
                 })
         }
+        
     }, []);
 
     return (

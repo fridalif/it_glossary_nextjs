@@ -34,7 +34,7 @@ export class Header extends Component {
                         ?
                             <>Вход/Регистрация</>
                         :
-                            <div onClick={localStorage.removeItem('access') || localStorage.removeItem('refresh')}>{this.props.authUsername} Выход</div>
+                            <div>{this.props.authUsername} Выход</div>
                         }
                     </div>
                 </a>
