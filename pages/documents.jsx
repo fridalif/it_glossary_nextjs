@@ -6,16 +6,34 @@ export default function Documents(){
     const [isStuff, setIsStuff] = useState(false)
 
     const isAuth = () =>{
-        axios
-            .get('http://127.0.0.1:8000/api/mydata/')
-            .then((response) => {
-                setAuthUsername(response.data.username)
-                setIsStuff(response.data.is_stuff)
-            })
-            .catch((error) => {
-                alert('Что-то пошло не так')
-            })
+        let accessToken = localStorage.getItem('access')
+        if (accessToken){
+            axios
+                .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
+                .then((response) => {
+                    setAuthUsername(response.data.username)
+                    setIsStuff(response.data.is_stuff)
+                })
+                .catch((error) => {
+                    let refreshToken = localStorage.getItem('refresh')
+                    axios
+                        .post('http://127.0.0.1:8000/api/token/refresh/', {refresh: refreshToken})
+                        .then((response) => {
+                            localStorage.setItem('access', response.data.access)
+                            let accessToken = localStorage.getItem('access')
+                            axios
+                                .get('http://127.0.0.1:8000/api/mydata/', {headers: {Authorization: `ITGlossary ${accessToken}`}})
+                                .then((response) => {
+                                    setAuthUsername(response.data.username)
+                                    setIsStuff(response.data.is_stuff)
+                                })
+                        })
+                })
+        }
     }
+
+    isAuth();
+    
 
     return (
         <>
