@@ -55,7 +55,16 @@ export class RegisterForm extends Component {
             username:this.state.username,
             password:this.state.password,
             email:this.state.email
-        }
+        };
+        axios
+            .post('http://127.0.0.1:8000/api/register/', data)
+            .then(response => {
+                alert('Регистрация прошла успешно');
+                this.changeMode();
+            })
+            .catch(error => {
+                alert(error);
+            });
     }
 
     changeMode(){
