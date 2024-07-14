@@ -38,3 +38,10 @@ def download(request, document_id):
         response = HttpResponse(f.read(), content_type='application/pdf')
         response['Content-Disposition'] = f'attachment; filename="{document.name}"'
         return response
+    
+    
+class RegsiterAPIView(APIView):
+    pass
+
+class LoginAPIView(APIView):
+    pass
