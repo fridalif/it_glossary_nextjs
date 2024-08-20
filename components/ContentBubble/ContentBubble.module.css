@@ -1,20 +1,18 @@
 .contentBubble{
-    width: 1200px;
+    width: 1170px;
     border-radius: 50px;
-    background-color: #C4E591;
+    background-color: #75c46e;
     height: 70px;
-    margin-top: 40px;
     display:flex;
+    justify-content: space-between;
+    align-items: center;
     color:#ffffff;
-    padding-left:5%;
+    padding-left:30px;
 }
 
 .lawBubbleName{
-    padding-top:11px;
     font-size: 24px;
-    width:65%;
-    padding-bottom: 30px;
-    background-color: #C4E591;
+    background-color: #75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
@@ -23,17 +21,25 @@
     padding-top:11px;
     font-size: 24px;
     padding-bottom: 30px;
-    background-color: #C4E591;
+    background-color: #75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
+.documentContent{
+    display: flex;
+    padding-right: 50px;
+    gap:10px;
+    height: 70px;
+}
 .lawBubbleDownloadButton{
-    padding-top:11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     padding-bottom: 30px;
     text-align: center;
-    width:12.5%;
-    background-color: #C4E591;
+    width:100px;
+    background-color: #75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
