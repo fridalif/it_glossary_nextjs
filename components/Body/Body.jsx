@@ -36,10 +36,10 @@ export function Body({mode}) {
                 {mode === 'Home' && <>Самые популярные документы</>}
                 {
                     (mode === 'Documents' || mode==='Terms') &&
-                    <>
+                    <div className={styles.searchForm}>
+                        <div className={styles.searchIcon}><IoMdSearch width={'50px'} height={'50px'}/></div>
                         <input type='text' name='search' id='search' className={styles.searchField} placeholder='Поиск...' onChange={(e) => {setQuery(e.target.value)}}/>
-                        <div className={styles.searchIcon}><IoMdSearch /></div>
-                    </>
+                    </div>
                 }
             </div>
             {

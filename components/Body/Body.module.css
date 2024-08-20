@@ -1,42 +1,41 @@
 .body{
-    top: 29%;
-    width:101%;
-    left:-1%;
     background-color: #ffffff;
-    position: absolute;
+    display:flex;
+    flex-direction: column;
+
 }
 
 .bodyContentTitle{
     font-family:'Montserrat', sans-serif;
     font-size: 24px;
-    height: 30px;
+    height: 50px;
+    width:1200px;
+    display:flex;
     text-align: center;
-    left:0;
-    width:100%;
-    position: absolute;
+}
+
+.searchForm{
+    height: 50px;
+    width:1200px;
+    border:black 1px solid;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
 }
 
 .searchField{
-    height: 100%;
-    width:30%;
-    position:absolute;
+    height: 45px;
+    width:1100px;
     font-size: 16px;
-    left:25%;
     border:none;
-    border-top:black 1px solid;
-    border-bottom:black 1px solid;
-    border-right:black 1px solid;
     outline: none;
-    border-radius: 1px;
 }
 
 
 .searchIcon{
-    position:absolute;
-    width:3%;
-    border-radius: 1px;
-    height: 105%;
-    left:22%;
-    border: black 1px solid;
-    border-right: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height: 50px;
 }
