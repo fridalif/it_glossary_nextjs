@@ -43,9 +43,6 @@ export function Body({mode}) {
                 }
             </div>
             {
-                (mode === 'Register' || mode === 'Login') && <RegisterForm mode={mode} />
-            }
-            {
                 (mode === 'Home' || mode === 'Documents') && api_data.map((item) => <DocumentBubble key={item.id} documentName={item.name} documentId={item.id} downloadsCount={item.downloads} />)
             }
             {

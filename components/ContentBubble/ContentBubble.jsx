@@ -24,11 +24,13 @@ export function DocumentBubble({documentId, documentName, downloadsCount}){
             <div className={styles.lawBubbleName}>
                 {documentName}
             </div>
-            <div className={styles.lawBubbleDownloadsCount}>
-                <FaEye /> {downloadsCount}
-            </div>
-            <div className={styles.lawBubbleDownloadButton} id={documentId} onClick={()=>downloadDocument(documentId)}>
-                <MdDownload/>
+            <div className={styles.documentContent}>
+                <div className={styles.lawBubbleDownloadsCount}>
+                    <FaEye /> {downloadsCount}
+                </div>
+                <div className={styles.lawBubbleDownloadButton} id={documentId} onClick={()=>downloadDocument(documentId)}>
+                    <MdDownload/>
+                </div>
             </div>
         </div>
     )
