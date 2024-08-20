@@ -51,7 +51,7 @@ export function TermBubble({term, definition, documentName,documentId,termId}){
     }
 
     return(
-        <div className={styles.contentBubble} id={`term_${termId}`}>
+        <div className={styles.contentTerm} id={`term_${termId}`}>
             <div className={styles.termsBubbleName} id={termId}>
                 {term}
             </div>

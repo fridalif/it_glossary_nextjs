@@ -10,6 +10,18 @@
     padding-left:30px;
 }
 
+.contentTerm{
+    width: 1170px;
+    border-radius: 50px;
+    background-color: #75c46e;
+    height: 70px;
+    display:flex;
+    align-items: center;
+    color:#ffffff;
+    padding-left:30px;
+}
+
+
 .lawBubbleName{
     font-size: 24px;
     background-color: #75c46e;
@@ -52,46 +64,36 @@
 
 
 .termsBubbleName{
-    padding-top: 15px;
-    position:absolute;
-    height: 70%;
     font-size: 16px;
-    left:5%;
-    width:25%;
-    background-color:#C4E591;
+    width:250px;
+    padding-left: 11px;
+    background-color:#75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
 .termsBubbleDefinition{
-    padding-top: 15px;
-    position:absolute;
-    height: 70%;
     font-size: 16px;
-    left:30%;
-    width:40%;
-    background-color:#C4E591;
+    width:500px;
+    background-color:#75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
 .termsBubbleDocument{
-    position:absolute;
-    height: 100%;
     font-size: 16px;
-    left:70%;
-    width:15%;
-    background-color:#C4E591;
+    width:250px;
+    background-color:#75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
 .termsBubbleDownloadButton{
-    position:absolute;
-    height: 79%;
+    display:flex;
+    justify-content: center;
+    padding-top: 20px;
     font-size: 30px;
     text-align: center;
-    padding-top: 15px;
-    left:85%;
-    width:10%;
-    background-color:#C4E591;
+    width:100px;
+    height: 50px;
+    background-color:#75c46e;
     font-family: 'Monserrat',sans-serif;
 }
 
