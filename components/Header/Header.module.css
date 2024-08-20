@@ -1,20 +1,22 @@
 .header{
-    width: 101%;
+    width: 1200px;
     top:-1%;
-    height: 20%;
+    height: 150px;
     background-color: #ffffff;
     display: flex;
     font-size: 2rem;
-    position: fixed;
-    left:-1%;
+    align-items:center;
+    gap:20px;
+    padding-left:50px;
     box-shadow: #8b9d70 0 0 10px;
 }
 
 .logoBlock{
     width: 10%;
-    position: absolute;
-    left:7%;
-    height: 100%;
+    height: 150px;
+    width:100px;
+    justify-content: center;
+    align-items: center;
 }
 
 .header a{
@@ -23,13 +25,10 @@
 }
 
 .titleBlock{
-    width: 15%;
-    position: absolute;
-    left:15%;
-    top:40%;
+    width: 300px;
     font-family:'Montserrat', sans-serif;
     font-size: 32px;
-    height: 30%;
+    height: 40px;
     text-align: center;
 }
 
@@ -46,13 +45,8 @@
 }
 
 .documentsHeaderBlock{
-    width: 10%;
-    position: absolute;
-    left:35%;
-    top:45%;
     font-family:'Montserrat', sans-serif;
     font-size: 24px;
-    height: 20%;
     text-align: center;
 }
 
@@ -69,13 +63,8 @@
 }
 
 .terminsHeaderBlock{
-    width: 10%;
-    position: absolute;
-    left:45%;
-    top:45%;
     font-family:'Montserrat', sans-serif;
     font-size: 24px;
-    height: 20%;
     text-align: center;
 }
 
@@ -86,54 +75,6 @@
 }
 
 .terminsHeaderBlock:active{
-    color:#8b9d70;
-    border-top:#8b9d70 1px solid;
-    border-bottom:#8b9d70 1px solid;
-}
-
-
-.registerHeaderBlock{
-    width: 15%;
-    position: absolute;
-    right:10%;
-    top:45%;
-    font-family:'Montserrat', sans-serif;
-    font-size: 24px;
-    height: 20%;
-    text-align: center;
-}
-
-.registerHeaderBlock:hover{
-    color:#C4E591;
-    border-top:#C4E591 1px solid;
-    border-bottom:#C4E591 1px solid;
-}
-
-.registerHeaderBlock:active{
-    color:#8b9d70;
-    border-top:#8b9d70 1px solid;
-    border-bottom:#8b9d70 1px solid;
-}
-
-
-.enterHeaderBlock{
-    width: 10%;
-    position: absolute;
-    right:15%;
-    top:45%;
-    font-family:'Montserrat', sans-serif;
-    font-size: 24px;
-    height: 20%;
-    text-align: center;
-}
-
-.enterHeaderBlock:hover{
-    color:#C4E591;
-    border-top:#C4E591 1px solid;
-    border-bottom:#C4E591 1px solid;
-}
-
-.enterHeaderBlock:active{
     color:#8b9d70;
     border-top:#8b9d70 1px solid;
     border-bottom:#8b9d70 1px solid;
