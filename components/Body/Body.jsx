@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Body.module.css';
 import { TermBubble, DocumentBubble } from '../ContentBubble/ContentBubble';
-import { RegisterForm } from '../RegisterForm/RegisterForm';
 import { IoMdSearch } from "react-icons/io";
 import axios from 'axios'
 
@@ -24,10 +23,11 @@ export function Body({mode}) {
     
     useEffect(() => {
         const getInfo = async ()=>{
-            let data = await getInfoWithQuery()
-            setApiData(data)
+            let data = await getInfoWithQuery();
+            setApiData(data);
         }
-        getInfo()
+        let timeout = setTimeout(()=>getInfo(),2000);
+        return ()=>clearTimeout(timeout);
     },[query])
     
     return (
