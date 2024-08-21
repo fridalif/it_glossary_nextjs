@@ -12,11 +12,9 @@ export function Body({mode}) {
             return [];
         }
         if(mode === 'Documents' || mode === 'Home'){
-            return [{'id':1,'name':'firstdocument','downloads':100}, {'id':2,'name':'seconddocument','downloads':50}]
             let response = await axios.get(`http://127.0.0.1:8000/api/documents/?query=${query}`)                
             return response.data
         }
-        return [{'id':1,'term':'term1','definition':'definition1','document_name':'firstdocument','document_id':1}, {'id':2,'term':'term2','definition':'definition2','document_name':'seocnddocument','document_id':2}]
         let response = await axios.get(`http://127.0.0.1:8000/api/terms/?query=${query}`)
         return response.data    
     }
@@ -26,7 +24,7 @@ export function Body({mode}) {
             let data = await getInfoWithQuery();
             setApiData(data);
         }
-        let timeout = setTimeout(()=>getInfo(),2000);
+        let timeout = setTimeout(()=>getInfo(),1000);
         return ()=>clearTimeout(timeout);
     },[query])
     
